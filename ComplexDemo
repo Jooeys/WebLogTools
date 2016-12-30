@@ -1,0 +1,33 @@
+package com.zhong;
+
+public class ComplexDemo {
+	// main方法
+	public static void main(String[] a) {
+	Complex b = new Complex(2,5);//实例化一个Complex()
+	Complex c = new Complex(3,-4);
+	System.out.println(b + "+" + c + "=" + b.add(c));
+	}
+	}
+	// Complex类
+	class Complex {
+	private double m;// 实部
+	private double n;// 虚部
+	public Complex(double m,double n) {
+	this.m = m; //当前对象自己用this进行引用
+	this.n = n;
+	}
+	// add类
+	public Complex add(Complex c) {
+	return new Complex(m + c.m,n + c.n);//对象实例化
+	}
+	public String toString() {
+	String rtr_str = "";
+	if (n > 0)
+	rtr_str = "(" + m + "+" + n + "i" + ")";
+	if (n == 0)
+	rtr_str = "(" + m + ")";
+	if (n < 0)
+	rtr_str = "(" + m + n + "i" + ")";
+	return rtr_str;
+	}
+	}
