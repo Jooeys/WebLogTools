@@ -1,0 +1,33 @@
+package com.zhong;
+public class Lamps {
+	private int watt = 0;
+	private boolean status = false;
+	
+	public Lamps(int watt){
+		this.watt=watt;
+	}
+	public Lamps(int watt,boolean status){
+		this.watt=watt; 
+		this.status=status;
+	}
+	public void TurnOn(){
+		this.status=true;
+	}
+	public void TurnOff(){
+		this.status=false;
+	}
+	public void printinfo(){
+		System.out.println("灯泡功率："+watt);
+		if(this.status){
+			System.out.println("灯泡亮着！");
+		}else{
+			System.out.println("灯泡熄灭了！");
+		}
+	}
+	public static void main(String[] args) {
+		Lamps lamp = new Lamps(150);
+		lamp.TurnOn();
+		//lamp.TurnOff();
+		lamp.printinfo();
+	}
+}
